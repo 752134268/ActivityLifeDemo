@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -57,8 +59,24 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Log.i(TAG, "onCreate: ");
         setContentView(R.layout.activity_main);
+        TextView tv_content = findViewById(R.id.tv_content);
+        tv_content.setText(SecondActivity.TAG);
         
     }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("username","wangbl");
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        Log.i(TAG, "onRestoreInstanceState: " + savedInstanceState.getString("username"));
+        ;
+    }
+
     public void onClick(View view) {
 
 //        AlertDialog alertDialog = new AlertDialog.Builder(SecondActivity.this).setTitle("弹出框").setMessage("弹框内容").create();

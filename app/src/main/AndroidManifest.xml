@@ -16,7 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SecondActivity"/>
+        <activity android:name=".SecondActivity" android:launchMode="singleTask" />
         <activity android:name=".ThirdActivity" android:theme="@style/Theme.AppCompat.Dialog"/>
     </application>
 

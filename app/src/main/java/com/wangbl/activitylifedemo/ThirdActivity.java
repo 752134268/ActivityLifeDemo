@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -50,8 +51,10 @@ public class ThirdActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Log.i(TAG, "onCreate: ");
         setContentView(R.layout.activity_third);
+       TextView tv_content =  findViewById(R.id.tv_content);
+        tv_content.setText(ThirdActivity.TAG);
 
-        
+
     }
 
 }
